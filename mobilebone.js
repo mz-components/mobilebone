@@ -13,6 +13,8 @@
     if (typeof define === 'function' && (define.amd || define.cmd)) {
         
         module.exports = factory(root, exports) || module.exports;;    // Finally, as a browser global.
+    } else if (typeof exports !== 'undefined') {
+        module.exports = factory(root, {});
     } else {
         root.Mobilebone = factory(root, {});
     }
